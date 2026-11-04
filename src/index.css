@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-corporate-blue: #0B2E73;
+  --color-navy-blue: #082452;
+  --color-brand-orange: #F26A21;
+  --color-brand-orange-hover: #d95713;
+  --color-light-bg: #F8FAFC;
+  --color-card-bg: #FFFFFF;
+  --color-border-gray: #E2E8F0;
+  --color-text-primary: #1E293B;
+  --color-text-secondary: #64748B;
+  --color-text-muted: #94A3B8;
+  --color-emerald-accent: #059669;
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-poppins);
+  }
+  body {
+    background-color: #F8FAFC;
+    color: #1E293B;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
