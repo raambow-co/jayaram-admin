@@ -1,8 +1,8 @@
 import React from 'react';
-import { Settings, Download, RotateCcw, Database, HardDrive, CheckCircle2 } from 'lucide-react';
+import { Settings, Download, RotateCcw, Database, HardDrive, CheckCircle2, Cloud, UploadCloud } from 'lucide-react';
 import { COMPANY_INFO } from '../data/mockData';
 
-const SettingsView = ({ inquiries, projects, onResetData, showToast }) => {
+const SettingsView = ({ inquiries, projects, onResetData, onSeedFirestore, isFirebaseConfigured, showToast }) => {
   // Export Database Backup as JSON
   const handleExportJSON = () => {
     const backupData = {
@@ -97,14 +97,23 @@ const SettingsView = ({ inquiries, projects, onResetData, showToast }) => {
         {/* Database & Storage */}
         <div className="bg-white p-6 rounded-3xl border border-border-gray shadow-xs space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-border-gray">
-            <h3 className="font-bold text-sm text-text-primary">Active Data Store &amp; Persistence</h3>
-            <span className="text-[10px] font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-              Client LocalStorage Synced
-            </span>
+            <h3 className="font-bold text-sm text-text-primary">Cloud Database &amp; Persistence</h3>
+            {isFirebaseConfigured ? (
+              <span className="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 flex items-center gap-1 font-semibold">
+                <Cloud className="w-3 h-3 text-emerald-600" />
+                Firebase Connected
+              </span>
+            ) : (
+              <span className="text-[10px] font-mono text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200 flex items-center gap-1 font-semibold">
+                Local / Waiting for .env
+              </span>
+            )}
           </div>
 
           <p className="text-xs text-text-secondary leading-relaxed">
-            Data persists safely in your browser storage. Backend API connection is currently decoupled as requested, allowing complete standalone operation.
+            {isFirebaseConfigured
+              ? 'Real-time synchronization with Google Firebase Firestore is active. Inquiries submitted on the website appear instantly in this console.'
+              : 'Add your Firebase credentials to .env to activate real-time Firestore database synchronization across the website and admin console.'}
           </p>
 
           <div className="space-y-2 text-xs">
@@ -127,6 +136,16 @@ const SettingsView = ({ inquiries, projects, onResetData, showToast }) => {
 
           {/* Backup & Reset Controls */}
           <div className="pt-2 flex flex-col sm:flex-row gap-3">
+            {isFirebaseConfigured && onSeedFirestore && (
+              <button
+                onClick={onSeedFirestore}
+                className="py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors"
+              >
+                <UploadCloud className="w-4 h-4" />
+                <span>Sync Projects to Cloud</span>
+              </button>
+            )}
+
             <button
               onClick={handleExportJSON}
               className="flex-1 py-2.5 px-4 bg-corporate-blue hover:bg-navy-blue text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors"

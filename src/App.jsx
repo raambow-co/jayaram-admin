@@ -11,6 +11,17 @@ import NewInquiryModal from './components/NewInquiryModal';
 import NewProjectModal from './components/NewProjectModal';
 import Toast from './components/Toast';
 import { INITIAL_INQUIRIES, INITIAL_PROJECTS } from './data/mockData';
+import { isFirebaseConfigured } from './firebase';
+import { 
+  subscribeToInquiries, 
+  updateInquiryStatusInDb, 
+  addInquiryNoteInDb, 
+  createInquiryInDb, 
+  subscribeToProjects, 
+  createProjectInDb, 
+  deleteProjectInDb,
+  seedInitialProjectsInDb
+} from './services/adminService';
 
 const App = () => {
   // Load data from localStorage or fallback to initial authentic data
@@ -73,6 +84,26 @@ const App = () => {
     }
   }, [projects]);
 
+  // Real-time Firestore sync
+  useEffect(() => {
+    const unsubInquiries = subscribeToInquiries((items) => {
+      if (items && Array.isArray(items)) {
+        setInquiries(items);
+      }
+    }, inquiries);
+
+    const unsubProjects = subscribeToProjects((items) => {
+      if (items && Array.isArray(items) && items.length > 0) {
+        setProjects(items);
+      }
+    }, projects);
+
+    return () => {
+      unsubInquiries();
+      unsubProjects();
+    };
+  }, []);
+
   // Navigation states
   const [currentView, setCurrentView] = useState('dashboard'); // 'dashboard' | 'enquiries' | 'projects' | 'analytics' | 'settings'
   const [selectedCategory, setSelectedCategory] = useState('all'); // 'all' | 'sustainability' | etc.
@@ -100,6 +131,8 @@ const App = () => {
     if (activeInquiryModal && activeInquiryModal.id === inquiryId) {
       setActiveInquiryModal(prev => ({ ...prev, status: newStatus }));
     }
+
+    updateInquiryStatusInDb(inquiryId, newStatus);
   };
 
   // Add Internal Note Handler
@@ -128,21 +161,38 @@ const App = () => {
         notes: [...(prev.notes || []), newNoteObj],
       }));
     }
+
+    addInquiryNoteInDb(inquiryId, newNoteObj);
   };
 
   // Add Manual Inquiry
-  const handleAddInquiry = (newInquiry) => {
+  const handleAddInquiry = async (newInquiry) => {
     setInquiries(prev => [newInquiry, ...prev]);
+    try {
+      await createInquiryInDb(newInquiry);
+    } catch (err) {
+      console.warn('Inquiry saved locally:', err);
+    }
   };
 
   // Add New Project Showcase
-  const handleAddProject = (newProject) => {
+  const handleAddProject = async (newProject) => {
     setProjects(prev => [newProject, ...prev]);
+    try {
+      await createProjectInDb(newProject);
+    } catch (err) {
+      console.warn('Project saved locally:', err);
+    }
   };
 
   // Delete Project Showcase
-  const handleDeleteProject = (projectId) => {
+  const handleDeleteProject = async (projectId) => {
     setProjects(prev => prev.filter(p => p.id !== projectId));
+    try {
+      await deleteProjectInDb(projectId);
+    } catch (err) {
+      console.warn('Project deleted locally:', err);
+    }
   };
 
   // Reset to Clean Authentic Seed Data
@@ -151,6 +201,16 @@ const App = () => {
     setProjects(INITIAL_PROJECTS);
     localStorage.removeItem('jayarams_admin_inquiries');
     localStorage.removeItem('jayarams_admin_projects');
+  };
+
+  // Seed Initial Projects to Firestore
+  const handleSeedFirestoreProjects = async () => {
+    try {
+      await seedInitialProjectsInDb(INITIAL_PROJECTS);
+      showToast('Initial authentic projects successfully synced to Firestore!', 'success');
+    } catch (err) {
+      showToast('Failed to seed projects to Firestore', 'error');
+    }
   };
 
   // Jump directly to a Category from Dashboard
@@ -226,6 +286,8 @@ const App = () => {
               inquiries={inquiries}
               projects={projects}
               onResetData={handleResetData}
+              onSeedFirestore={handleSeedFirestoreProjects}
+              isFirebaseConfigured={isFirebaseConfigured}
               showToast={showToast}
             />
           )}
