@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Upload, Image as ImageIcon, Plus, Building2, MapPin } from 'lucide-react';
 import { DIVISIONS } from '../data/mockData';
+import { compressImage } from '../utils/imageCompressor';
 
 const PRESET_ASSETS = [
   { label: 'Sustainability & Environmental Infrastructure', path: '/sustainability-infra.jpg' },
@@ -34,15 +35,22 @@ const NewProjectModal = ({ onClose, onAddProject, showToast }) => {
     }
   };
 
-  const handleFileUpload = (e) => {
+  const [isCompressing, setIsCompressing] = useState(false);
+
+  const handleFileUpload = async (e) => {
     const file = e.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData(prev => ({ ...prev, imageUrl: reader.result }));
+      try {
+        setIsCompressing(true);
+        const compressed = await compressImage(file, 1400, 0.84);
+        setFormData(prev => ({ ...prev, imageUrl: compressed }));
         setPreviewError(false);
-      };
-      reader.readAsDataURL(file);
+        showToast('Image uploaded and optimized successfully!', 'success');
+      } catch (err) {
+        showToast('Failed to optimize image: ' + err.message, 'error');
+      } finally {
+        setIsCompressing(false);
+      }
     }
   };
 
@@ -57,6 +65,8 @@ const NewProjectModal = ({ onClose, onAddProject, showToast }) => {
     const newProject = {
       id: randomId,
       ...formData,
+      scale: formData.capacity,
+      summary: formData.description,
       featured: false,
     };
 

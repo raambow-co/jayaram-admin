@@ -152,6 +152,23 @@ export async function createProjectInDb(projectData) {
 }
 
 /**
+ * Update a project in Firestore (including changing image, title, scale, etc.).
+ */
+export async function updateProjectInDb(projectId, updatedData) {
+  if (!isFirebaseConfigured || !db) return;
+  try {
+    const ref = doc(db, 'projects', projectId);
+    await updateDoc(ref, {
+      ...updatedData,
+      updatedAt: new Date().toISOString()
+    });
+  } catch (err) {
+    console.error('[Firebase] Failed to update project:', err);
+    throw err;
+  }
+}
+
+/**
  * Delete a project in Firestore.
  */
 export async function deleteProjectInDb(projectId) {

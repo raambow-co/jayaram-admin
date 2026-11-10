@@ -7,6 +7,7 @@ import {
   Building2, 
   Maximize2, 
   Trash2, 
+  Edit3,
   Leaf, 
   SunMedium, 
   Landmark, 
@@ -16,6 +17,7 @@ import {
   Layers 
 } from 'lucide-react';
 import { DIVISIONS } from '../data/mockData';
+import EditProjectModal from './EditProjectModal';
 
 const iconMap = {
   sustainability: Leaf,
@@ -28,6 +30,7 @@ const iconMap = {
 const ProjectsManager = ({ 
   projects, 
   onNewProject, 
+  onUpdateProject,
   onDeleteProject, 
   showToast 
 }) => {
@@ -35,6 +38,7 @@ const ProjectsManager = ({
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState('All');
   const [previewImage, setPreviewImage] = useState(null); // Fullscreen lightbox
+  const [editingProject, setEditingProject] = useState(null);
 
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
@@ -247,22 +251,33 @@ const ProjectsManager = ({
               </div>
 
               {/* Action Footer */}
-              <div className="p-4 bg-light-bg/50 border-t border-border-gray flex items-center justify-between">
+              <div className="p-4 bg-light-bg/50 border-t border-border-gray flex items-center justify-between gap-2">
                 <button
                   onClick={() => setPreviewImage(project)}
-                  className="text-xs font-semibold text-corporate-blue hover:text-brand-orange flex items-center gap-1 transition-colors"
+                  className="text-xs font-semibold text-text-secondary hover:text-corporate-blue flex items-center gap-1 transition-colors"
                 >
                   <Maximize2 className="w-3.5 h-3.5" />
-                  <span>Inspect Image</span>
+                  <span>Inspect</span>
                 </button>
 
-                <button
-                  onClick={() => handleDelete(project.id, project.title)}
-                  className="p-1.5 text-text-muted hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                  title="Remove from Showcase"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    onClick={() => setEditingProject(project)}
+                    className="text-xs font-semibold text-corporate-blue hover:text-white bg-blue-50 hover:bg-corporate-blue px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 transition-all shadow-2xs"
+                    title="Edit project details & change image"
+                  >
+                    <Edit3 className="w-3.5 h-3.5" />
+                    <span>Edit / Change Image</span>
+                  </button>
+
+                  <button
+                    onClick={() => handleDelete(project.id, project.title)}
+                    className="p-1.5 text-text-muted hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                    title="Remove from Showcase"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             </div>
           );
@@ -325,6 +340,15 @@ const ProjectsManager = ({
             </div>
           </div>
         </div>
+      )}
+      {/* Edit Project Modal */}
+      {editingProject && (
+        <EditProjectModal
+          project={editingProject}
+          onClose={() => setEditingProject(null)}
+          onUpdateProject={onUpdateProject}
+          showToast={showToast}
+        />
       )}
     </div>
   );

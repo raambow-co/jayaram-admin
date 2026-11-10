@@ -19,6 +19,7 @@ import {
   createInquiryInDb, 
   subscribeToProjects, 
   createProjectInDb, 
+  updateProjectInDb,
   deleteProjectInDb,
   seedInitialProjectsInDb
 } from './services/adminService';
@@ -185,6 +186,21 @@ const App = () => {
     }
   };
 
+  // Update Existing Project
+  const handleUpdateProject = async (projectId, updatedData) => {
+    setProjects(prev => prev.map(p => {
+      if (p.id === projectId) {
+        return { ...p, ...updatedData };
+      }
+      return p;
+    }));
+    try {
+      await updateProjectInDb(projectId, updatedData);
+    } catch (err) {
+      console.warn('Project updated locally:', err);
+    }
+  };
+
   // Delete Project Showcase
   const handleDeleteProject = async (projectId) => {
     setProjects(prev => prev.filter(p => p.id !== projectId));
@@ -269,6 +285,7 @@ const App = () => {
             <ProjectsManager
               projects={projects}
               onNewProject={() => setShowNewProjectModal(true)}
+              onUpdateProject={handleUpdateProject}
               onDeleteProject={handleDeleteProject}
               showToast={showToast}
             />
