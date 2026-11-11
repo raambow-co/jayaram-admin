@@ -1,92 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <!-- Homepage -->
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+                            http://www.google.com/schemas/sitemap-image/1.1
+                            http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ==================================================================== -->
+  <!-- 1. Primary Corporate Portal Homepage                                  -->
+  <!-- ==================================================================== -->
   <url>
     <loc>https://jayaramsbharat.com/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-11T10:24:00+05:30</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://jayaramsbharat.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jayaramsbharat.com/" />
     <image:image>
       <image:loc>https://jayaramsbharat.com/logo.webp</image:loc>
-      <image:title>Jayarams Bharat Logo</image:title>
-      <image:caption>Jayarams Bharat Private Limited - Premier Engineering &amp; Infrastructure Contractor</image:caption>
+      <image:title>Jayarams Bharat Corporate Emblem &amp; Logo</image:title>
+      <image:caption>Jayarams Bharat Private Limited - Leading Solar EPC, Infrastructure &amp; CCTV Solutions in Vijayawada, Eluru &amp; Andhra Pradesh</image:caption>
+      <image:geo_location>Vijayawada, Andhra Pradesh, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://jayaramsbharat.com/india-map.webp</image:loc>
+      <image:title>Jayarams Bharat Regional &amp; National Footprint</image:title>
+      <image:caption>Operational footprint across Andhra Pradesh, Telangana, and national infrastructure corridors</image:caption>
+      <image:geo_location>Vijayawada, Andhra Pradesh, India</image:geo_location>
     </image:image>
   </url>
 
-  <!-- Renewable Energies & Solar EPC (Vijayawada & Eluru) -->
+  <!-- ==================================================================== -->
+  <!-- 2. Renewable Energies & Solar EPC (Vijayawada & Eluru Corridor)       -->
+  <!-- ==================================================================== -->
   <url>
-    <loc>https://jayaramsbharat.com/#renewable</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://jayaramsbharat.com/solar-epc-vijayawada-eluru</loc>
+    <lastmod>2026-11-11T10:24:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://jayaramsbharat.com/solar-epc-vijayawada-eluru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jayaramsbharat.com/solar-epc-vijayawada-eluru" />
     <image:image>
       <image:loc>https://jayaramsbharat.com/renewable-energies.webp</image:loc>
-      <image:title>Solar EPC and Clean Energy Solutions</image:title>
+      <image:title>Utility-Scale &amp; Commercial Solar EPC Plant</image:title>
+      <image:caption>High-efficiency bifacial Solar PV EPC installations in Vijayawada, Eluru, and Andhra Pradesh highways</image:caption>
+      <image:geo_location>Vijayawada, Andhra Pradesh, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://jayaramsbharat.com/solar-jairam.webp</image:loc>
+      <image:title>Commercial Solar Arrays &amp; DC Fast EV Charging Plaza</image:title>
+      <image:caption>Solar canopy arrays with integrated dual-gun high-power EV fast charging stations</image:caption>
+      <image:geo_location>Eluru, Andhra Pradesh, India</image:geo_location>
     </image:image>
   </url>
 
-  <!-- CCTV Surveillance & Optics (Vijayawada & Eluru) -->
+  <!-- ==================================================================== -->
+  <!-- 3. AI CCTV Surveillance & Optical Security Networks                  -->
+  <!-- ==================================================================== -->
   <url>
-    <loc>https://jayaramsbharat.com/#cctv</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://jayaramsbharat.com/cctv-surveillance-vijayawada-eluru</loc>
+    <lastmod>2026-11-11T10:24:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://jayaramsbharat.com/cctv-surveillance-vijayawada-eluru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jayaramsbharat.com/cctv-surveillance-vijayawada-eluru" />
     <image:image>
       <image:loc>https://jayaramsbharat.com/cctv.webp</image:loc>
-      <image:title>AI CCTV Surveillance and Security Systems</image:title>
+      <image:title>AI Video Surveillance &amp; ANPR Optics Grid</image:title>
+      <image:caption>High-definition perimeter security, automated number plate recognition, and telemetry links in Vijayawada and Eluru</image:caption>
+      <image:geo_location>Eluru, Andhra Pradesh, India</image:geo_location>
     </image:image>
   </url>
 
-  <!-- Sustainability & Environmental Infrastructure -->
+  <!-- ==================================================================== -->
+  <!-- 4. Sustainability & Environmental Infrastructure (Bio-Mining / ETP)  -->
+  <!-- ==================================================================== -->
   <url>
-    <loc>https://jayaramsbharat.com/#sustainability</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://jayaramsbharat.com/environmental-infrastructure-bio-mining</loc>
+    <lastmod>2026-11-11T10:24:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://jayaramsbharat.com/environmental-infrastructure-bio-mining" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jayaramsbharat.com/environmental-infrastructure-bio-mining" />
     <image:image>
       <image:loc>https://jayaramsbharat.com/sustainability-infra.webp</image:loc>
-      <image:title>Environmental Infrastructure and Bio-Mining</image:title>
+      <image:title>Closed-Loop Water Stewardship &amp; Bio-Mining Infrastructure</image:title>
+      <image:caption>Turnkey legacy municipal solid waste remediation, bio-mining, and industrial ETP/STP effluent treatment plants</image:caption>
+      <image:geo_location>Vijayawada, Andhra Pradesh, India</image:geo_location>
     </image:image>
   </url>
 
-  <!-- Network Integration -->
+  <!-- ==================================================================== -->
+  <!-- 5. Enterprise Network Integration & Fiber Backbone                   -->
+  <!-- ==================================================================== -->
   <url>
-    <loc>https://jayaramsbharat.com/#network</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://jayaramsbharat.com/network-integration-fiber-backbone</loc>
+    <lastmod>2026-11-11T10:24:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://jayaramsbharat.com/network-integration-fiber-backbone" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jayaramsbharat.com/network-integration-fiber-backbone" />
     <image:image>
       <image:loc>https://jayaramsbharat.com/network-integration.webp</image:loc>
-      <image:title>Optical Fiber Backbone and Command Center</image:title>
+      <image:title>Integrated Command and Control Center (ICCC) Backbone</image:title>
+      <image:caption>High-speed optical fiber backbones and city-wide intelligent traffic command integration in Andhra Pradesh</image:caption>
+      <image:geo_location>Vijayawada, Andhra Pradesh, India</image:geo_location>
     </image:image>
   </url>
 
-  <!-- Government Supplies & Civil Equipment -->
+  <!-- ==================================================================== -->
+  <!-- 6. Government Supplies & Institutional GeM Procurement               -->
+  <!-- ==================================================================== -->
   <url>
-    <loc>https://jayaramsbharat.com/#government</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://jayaramsbharat.com/government-supplies-gem-procurement</loc>
+    <lastmod>2026-11-11T10:24:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://jayaramsbharat.com/government-supplies-gem-procurement" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jayaramsbharat.com/government-supplies-gem-procurement" />
     <image:image>
       <image:loc>https://jayaramsbharat.com/government-supplies.webp</image:loc>
-      <image:title>GeM Verified Government Supplies</image:title>
+      <image:title>GeM Verified Government Supplies &amp; Rapid Response Gear</image:title>
+      <image:caption>Institutional procurement of municipal machinery, emergency disaster mitigation gear, and civil works equipment</image:caption>
+      <image:geo_location>Eluru, Andhra Pradesh, India</image:geo_location>
     </image:image>
   </url>
 
-  <!-- Projects Showcase -->
+  <!-- ==================================================================== -->
+  <!-- 7. Engineering Advisory, DPR & PMO Consultancy                       -->
+  <!-- ==================================================================== -->
   <url>
-    <loc>https://jayaramsbharat.com/#projects</loc>
-    <lastmod>2026-11-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://jayaramsbharat.com/engineering-consultancy-dpr</loc>
+    <lastmod>2026-11-11T10:24:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://jayaramsbharat.com/engineering-consultancy-dpr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jayaramsbharat.com/engineering-consultancy-dpr" />
   </url>
 
-  <!-- Inquiries & Contact Desk -->
+  <!-- ==================================================================== -->
+  <!-- 8. Project Execution Portfolio Showcase                              -->
+  <!-- ==================================================================== -->
   <url>
-    <loc>https://jayaramsbharat.com/#enquiries</loc>
-    <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://jayaramsbharat.com/projects</loc>
+    <lastmod>2026-11-11T10:24:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://jayaramsbharat.com/projects" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jayaramsbharat.com/projects" />
   </url>
+
+  <!-- ==================================================================== -->
+  <!-- 9. Division Enquiries, Tenders & Stakeholder Intake                  -->
+  <!-- ==================================================================== -->
+  <url>
+    <loc>https://jayaramsbharat.com/enquiries</loc>
+    <lastmod>2026-11-11T10:24:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://jayaramsbharat.com/enquiries" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jayaramsbharat.com/enquiries" />
+  </url>
+
+  <!-- ==================================================================== -->
+  <!-- 10. Corporate Overview & Governance Profile                          -->
+  <!-- ==================================================================== -->
+  <url>
+    <loc>https://jayaramsbharat.com/about</loc>
+    <lastmod>2026-11-11T10:24:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://jayaramsbharat.com/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jayaramsbharat.com/about" />
+  </url>
+
+  <!-- ==================================================================== -->
+  <!-- 11. Regional Operations Contact Desk (Vijayawada & Eluru)            -->
+  <!-- ==================================================================== -->
+  <url>
+    <loc>https://jayaramsbharat.com/contact</loc>
+    <lastmod>2026-11-11T10:24:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://jayaramsbharat.com/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jayaramsbharat.com/contact" />
+  </url>
+
 </urlset>
