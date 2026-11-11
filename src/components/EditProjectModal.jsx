@@ -4,19 +4,19 @@ import { DIVISIONS } from '../data/mockData';
 import { compressImage } from '../utils/imageCompressor';
 
 const PRESET_ASSETS = [
-  { label: 'Sustainability & Environmental Infrastructure', path: '/sustainability-infra.jpg' },
-  { label: 'Renewable Energies (Utility Solar)', path: '/renewable-energies.jpg' },
-  { label: 'Solar Rooftop & Ground Hub', path: '/solar-jairam.jpeg' },
-  { label: 'Network Integration (Command Center)', path: '/network-integration.jpg' },
-  { label: 'CCTV Surveillance & Optics', path: '/cctv.jpeg' },
-  { label: 'Government Heavy Supplies & Machinery', path: '/government-supplies.jpeg' },
+  { label: 'Sustainability & Environmental Infrastructure', path: '/sustainability-infra.webp' },
+  { label: 'Renewable Energies (Utility Solar)', path: '/renewable-energies.webp' },
+  { label: 'Solar Rooftop & Ground Hub', path: '/solar-jairam.webp' },
+  { label: 'Network Integration (Command Center)', path: '/network-integration.webp' },
+  { label: 'CCTV Surveillance & Optics', path: '/cctv.webp' },
+  { label: 'Government Heavy Supplies & Machinery', path: '/government-supplies.webp' },
 ];
 
 const EditProjectModal = ({ project, onClose, onUpdateProject, showToast }) => {
   const [formData, setFormData] = useState({
     title: project.title || '',
     divisionId: project.divisionId || 'sustainability',
-    imageUrl: project.imageUrl || '/sustainability-infra.jpg',
+    imageUrl: project.imageUrl || '/sustainability-infra.webp',
     location: project.location || '',
     client: project.client || '',
     capacity: project.capacity || project.scale || '',
