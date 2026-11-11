@@ -4,19 +4,19 @@ import { DIVISIONS } from '../data/mockData';
 import { compressImage } from '../utils/imageCompressor';
 
 const PRESET_ASSETS = [
-  { label: 'Sustainability & Environmental Infrastructure', path: '/sustainability-infra.jpg' },
-  { label: 'Renewable Energies (Solar PV)', path: '/renewable-energies.jpg' },
-  { label: 'Solar Rooftop & Ground Hub', path: '/solar-jairam.jpeg' },
-  { label: 'Network Integration (Command Center)', path: '/network-integration.jpg' },
-  { label: 'CCTV Surveillance & Optics', path: '/cctv.jpeg' },
-  { label: 'Government Heavy Supplies & Machinery', path: '/government-supplies.jpeg' },
+  { label: 'Sustainability & Environmental Infrastructure', path: '/sustainability-infra.webp' },
+  { label: 'Renewable Energies (Solar PV)', path: '/renewable-energies.webp' },
+  { label: 'Solar Rooftop & Ground Hub', path: '/solar-jairam.webp' },
+  { label: 'Network Integration (Command Center)', path: '/network-integration.webp' },
+  { label: 'CCTV Surveillance & Optics', path: '/cctv.webp' },
+  { label: 'Government Heavy Supplies & Machinery', path: '/government-supplies.webp' },
 ];
 
 const NewProjectModal = ({ onClose, onAddProject, showToast }) => {
   const [formData, setFormData] = useState({
     title: '',
     divisionId: 'sustainability',
-    imageUrl: '/sustainability-infra.jpg',
+    imageUrl: '/sustainability-infra.webp',
     location: '',
     client: '',
     capacity: '',
@@ -191,7 +191,7 @@ const NewProjectModal = ({ onClose, onAddProject, showToast }) => {
                   name="imageUrl"
                   value={formData.imageUrl}
                   onChange={handleChange}
-                  placeholder="/image-path.jpg"
+                  placeholder="/image-path.webp"
                   className="w-full px-3 py-1.5 bg-white border border-border-gray rounded-lg font-mono text-[11px] focus:outline-none focus:border-corporate-blue"
                 />
               </div>
@@ -199,9 +199,9 @@ const NewProjectModal = ({ onClose, onAddProject, showToast }) => {
               <div>
                 <span className="text-[10px] text-text-muted font-medium block mb-1">Or Upload Custom File:</span>
                 <label className="flex items-center justify-center gap-2 px-3 py-1.5 bg-white hover:bg-gray-50 border border-border-gray rounded-lg cursor-pointer text-text-secondary font-medium transition-colors">
-                  <Upload className="w-3.5 h-3.5" />
-                  <span>Choose Image File...</span>
-                  <input type="file" accept="image/*" onChange={handleFileUpload} className="hidden" />
+                  <Upload className={`w-3.5 h-3.5 ${isCompressing ? 'animate-bounce text-brand-orange' : ''}`} />
+                  <span>{isCompressing ? 'Optimizing to WebP...' : 'Choose Image File...'}</span>
+                  <input type="file" accept="image/*" onChange={handleFileUpload} disabled={isCompressing} className="hidden" />
                 </label>
               </div>
             </div>

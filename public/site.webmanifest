@@ -1,0 +1,42 @@
+{
+  "name": "Jayarams Bharat Private Limited",
+  "short_name": "Jayarams Bharat",
+  "description": "Executive Engineering & Infrastructure Command for Solar EPC, CCTV, Environmental & Network Systems in Vijayawada, Eluru and AP.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B2E73",
+  "theme_color": "#0B2E73",
+  "icons": [
+    {
+      "src": "/favicon.webp",
+      "sizes": "64x64",
+      "type": "image/webp"
+    },
+    {
+      "src": "/apple-touch-icon.webp",
+      "sizes": "180x180",
+      "type": "image/webp"
+    },
+    {
+      "src": "/favicon-512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

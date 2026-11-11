@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
+  <url>
+    <loc>https://jayaramsbharat.com/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://jayaramsbharat.com/logo.webp</image:loc>
+      <image:title>Jayarams Bharat Logo</image:title>
+      <image:caption>Jayarams Bharat Private Limited - Premier Engineering &amp; Infrastructure Contractor</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Renewable Energies & Solar EPC (Vijayawada & Eluru) -->
+  <url>
+    <loc>https://jayaramsbharat.com/#renewable</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://jayaramsbharat.com/renewable-energies.webp</image:loc>
+      <image:title>Solar EPC and Clean Energy Solutions</image:title>
+    </image:image>
+  </url>
+
+  <!-- CCTV Surveillance & Optics (Vijayawada & Eluru) -->
+  <url>
+    <loc>https://jayaramsbharat.com/#cctv</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://jayaramsbharat.com/cctv.webp</image:loc>
+      <image:title>AI CCTV Surveillance and Security Systems</image:title>
+    </image:image>
+  </url>
+
+  <!-- Sustainability & Environmental Infrastructure -->
+  <url>
+    <loc>https://jayaramsbharat.com/#sustainability</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://jayaramsbharat.com/sustainability-infra.webp</image:loc>
+      <image:title>Environmental Infrastructure and Bio-Mining</image:title>
+    </image:image>
+  </url>
+
+  <!-- Network Integration -->
+  <url>
+    <loc>https://jayaramsbharat.com/#network</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://jayaramsbharat.com/network-integration.webp</image:loc>
+      <image:title>Optical Fiber Backbone and Command Center</image:title>
+    </image:image>
+  </url>
+
+  <!-- Government Supplies & Civil Equipment -->
+  <url>
+    <loc>https://jayaramsbharat.com/#government</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://jayaramsbharat.com/government-supplies.webp</image:loc>
+      <image:title>GeM Verified Government Supplies</image:title>
+    </image:image>
+  </url>
+
+  <!-- Projects Showcase -->
+  <url>
+    <loc>https://jayaramsbharat.com/#projects</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Inquiries & Contact Desk -->
+  <url>
+    <loc>https://jayaramsbharat.com/#enquiries</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

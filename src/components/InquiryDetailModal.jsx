@@ -104,7 +104,10 @@ Web: ${COMPANY_INFO.website}`;
             <div>
               <span className="text-text-muted block text-[10px] uppercase font-bold">Client / Officer</span>
               <span className="font-bold text-text-primary text-sm mt-0.5 block">{inquiry.fullName}</span>
-              <span className="text-text-secondary">{inquiry.organization}</span>
+              <span className="text-text-secondary flex items-center gap-1 mt-0.5">
+                {inquiry.organization && <Building2 className="w-3 h-3 text-text-muted shrink-0" />}
+                <span>{inquiry.organization}</span>
+              </span>
             </div>
 
             <div>

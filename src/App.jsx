@@ -60,7 +60,13 @@ const App = () => {
           localStorage.removeItem('jayarams_admin_projects');
           return INITIAL_PROJECTS;
         }
-        return parsed;
+        // Seamlessly migrate legacy .jpg/.jpeg paths to .webp
+        return Array.isArray(parsed) ? parsed.map(p => ({
+          ...p,
+          imageUrl: typeof p.imageUrl === 'string'
+            ? p.imageUrl.replace(/\.(jpg|jpeg)$/i, '.webp')
+            : '/sustainability-infra.webp'
+        })) : INITIAL_PROJECTS;
       }
       return INITIAL_PROJECTS;
     } catch {
@@ -225,6 +231,7 @@ const App = () => {
       await seedInitialProjectsInDb(INITIAL_PROJECTS);
       showToast('Initial authentic projects successfully synced to Firestore!', 'success');
     } catch (err) {
+      console.error('Failed to seed projects to Firestore:', err);
       showToast('Failed to seed projects to Firestore', 'error');
     }
   };

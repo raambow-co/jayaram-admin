@@ -2,15 +2,304 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jayarams Bharat — Executive Admin Dashboard</title>
+    
+    <!-- Authentic Brand Favicon & Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0B2E73" />
+    <meta name="apple-mobile-web-app-title" content="Jayarams Bharat" />
+    <meta name="application-name" content="Jayarams Bharat" />
+
+    <!-- SEO Primary Meta Tags -->
+    <title>Jayarams Bharat — Solar EPC, Infrastructure, CCTV &amp; Smart Systems | Vijayawada, Eluru &amp; AP</title>
+    <meta name="title" content="Jayarams Bharat — Solar EPC, Infrastructure, CCTV &amp; Smart Systems | Vijayawada, Eluru &amp; AP" />
+    <meta 
+      name="description" 
+      content="Jayarams Bharat Private Limited is the #1 premier engineering &amp; infrastructure contractor serving Vijayawada, Eluru, Guntur, Amaravati, and surrounding regions within 1km to 50km. Leading Solar EPC &amp; Rooftop Solar installations, AI-powered CCTV surveillance networks, environmental legacy waste bio-mining, ETP/STP wastewater treatment plants, GeM government supplies, and high-speed optical fiber integration across NTR, Krishna &amp; Eluru districts of Andhra Pradesh." 
+    />
+    <meta 
+      name="keywords" 
+      content="Jayarams Bharat, Jayarams Bharat Private Limited, Jayaram Bharat, Jayaram admin, Solar EPC Vijayawada, Solar EPC Eluru, solar panel installation Vijayawada, rooftop solar Eluru, commercial solar power plant Vijayawada, EV charging station installer Vijayawada Eluru, CCTV installation Vijayawada, CCTV surveillance Eluru, AI CCTV cameras Andhra Pradesh, security camera installation near me Vijayawada 1km, bio-mining legacy waste Vijayawada, ETP STP plant contractor Eluru, environmental infrastructure Andhra Pradesh, GeM vendor Vijayawada, government supplies contractor Eluru, optical fiber network integration Vijayawada, smart city surveillance Gannavaram, solar company Tadepalli, CCTV installation Mangalagiri, solar EPC Gudivada, CCTV Eluru Sanivarapupeta, solar plant Hanuman Junction, engineering consultancy Nuzvid, infrastructure contractor Ibrahimpatnam, solar installer Kankipadu, Penamaluru, Vuyyuru, Gollapudi, Kondapalli, Pedavegi, Denduluru, Kaikaluru, Bhimavaram, Jangareddygudem, Tanuku, Tenali, Guntur, Amaravati, Krishna District, NTR District, Eluru District, Andhra Pradesh" 
+    />
+    <meta name="author" content="Jayarams Bharat Private Limited" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://jayaramsbharat.com/" />
+
+    <!-- Local SEO & Geo Targeting Meta Tags (Vijayawada - Eluru Corridor, Andhra Pradesh) -->
+    <meta name="geo.region" content="IN-AP" />
+    <meta name="geo.placename" content="Vijayawada, Eluru, Andhra Pradesh, India" />
+    <meta name="geo.position" content="16.5062;80.6480" />
+    <meta name="ICBM" content="16.5062, 80.6480" />
+    <meta name="target" content="all" />
+    <meta name="rating" content="General" />
+    <meta name="coverage" content="Vijayawada, Eluru, Guntur, Amaravati, Krishna, NTR, Eluru Districts, Andhra Pradesh, India" />
+    <meta name="distribution" content="Global" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:url" content="https://jayaramsbharat.com/" />
+    <meta property="og:site_name" content="Jayarams Bharat Private Limited" />
+    <meta property="og:title" content="Jayarams Bharat — Premier Solar EPC, Infrastructure &amp; CCTV Solutions in Vijayawada &amp; Eluru" />
+    <meta property="og:description" content="Top-tier engineering contractor in Vijayawada, Eluru and surrounding Andhra Pradesh areas. Solar EPC, commercial rooftops, CCTV AI analytics, environmental bio-mining &amp; ETP/STP, GeM government supplies, and optical fiber network backbones." />
+    <meta property="og:image" content="https://jayaramsbharat.com/logo.webp" />
+    <meta property="og:image:secure_url" content="https://jayaramsbharat.com/logo.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="760" />
+    <meta property="og:image:height" content="556" />
+    <meta property="og:image:alt" content="Jayarams Bharat Private Limited Official Emblem &amp; Logo" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@jayaramsbharat" />
+    <meta name="twitter:creator" content="@jayaramsbharat" />
+    <meta name="twitter:url" content="https://jayaramsbharat.com/" />
+    <meta name="twitter:title" content="Jayarams Bharat — Premier Solar EPC, Infrastructure &amp; CCTV Solutions" />
+    <meta name="twitter:description" content="Top engineering contractor serving Vijayawada, Eluru, and Andhra Pradesh within 1km to 50km radius. Solar EPC, CCTV, Bio-mining &amp; Network Infrastructure." />
+    <meta name="twitter:image" content="https://jayaramsbharat.com/logo.webp" />
+
     <!-- Google Fonts: Poppins & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD Structured Data: LocalBusiness & Corporation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Corporation", "LocalBusiness", "HomeAndConstructionBusiness", "ProfessionalService"],
+          "@id": "https://jayaramsbharat.com/#corporation",
+          "name": "Jayarams Bharat Private Limited",
+          "alternateName": [
+            "Jayarams Bharat",
+            "Jayaram Bharat",
+            "Jayaram Admin",
+            "Jayarams Solar Vijayawada",
+            "Jayarams Solar Eluru",
+            "Jayarams CCTV & Security Vijayawada",
+            "Jayarams Infrastructure"
+          ],
+          "url": "https://jayaramsbharat.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://jayaramsbharat.com/logo.webp",
+            "caption": "Jayarams Bharat Private Limited Logo"
+          },
+          "image": "https://jayaramsbharat.com/logo.webp",
+          "telephone": "+91-9876543210",
+          "email": "info@jayaramsbharat.com",
+          "priceRange": "$$$",
+          "description": "Leading infrastructure, Solar EPC, CCTV AI surveillance, environmental engineering, and government supplies contractor headquartered in Andhra Pradesh serving Vijayawada, Eluru, Guntur, Amaravati, and surrounding 1km-50km corridors.",
+          "address": [
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "Commercial Hub, Benz Circle & M.G. Road Corridor",
+              "addressLocality": "Vijayawada",
+              "addressRegion": "Andhra Pradesh",
+              "postalCode": "520010",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "Sanivarapupeta / Powerpet Commercial Belt",
+              "addressLocality": "Eluru",
+              "addressRegion": "Andhra Pradesh",
+              "postalCode": "534001",
+              "addressCountry": "IN"
+            }
+          ],
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 16.5062,
+            "longitude": 80.6480
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:00",
+              "closes": "19:00"
+            }
+          ],
+          "areaServed": [
+            { "@type": "City", "name": "Vijayawada" },
+            { "@type": "City", "name": "Eluru" },
+            { "@type": "City", "name": "Guntur" },
+            { "@type": "City", "name": "Amaravati" },
+            { "@type": "AdministrativeArea", "name": "NTR District" },
+            { "@type": "AdministrativeArea", "name": "Krishna District" },
+            { "@type": "AdministrativeArea", "name": "Eluru District" },
+            { "@type": "Place", "name": "Gannavaram" },
+            { "@type": "Place", "name": "Tadepalli" },
+            { "@type": "Place", "name": "Mangalagiri" },
+            { "@type": "Place", "name": "Hanuman Junction" },
+            { "@type": "Place", "name": "Gudivada" },
+            { "@type": "Place", "name": "Nuzvid" },
+            { "@type": "Place", "name": "Ibrahimpatnam" },
+            { "@type": "Place", "name": "Kankipadu" },
+            { "@type": "Place", "name": "Penamaluru" },
+            { "@type": "Place", "name": "Vuyyuru" },
+            { "@type": "Place", "name": "Gollapudi" },
+            { "@type": "Place", "name": "Kondapalli" },
+            { "@type": "Place", "name": "Pedavegi" },
+            { "@type": "Place", "name": "Denduluru" },
+            { "@type": "Place", "name": "Bhimavaram" },
+            { "@type": "AdministrativeArea", "name": "Andhra Pradesh" },
+            {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": 16.5062,
+                "longitude": 80.6480
+              },
+              "geoRadius": "50000"
+            },
+            {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": 16.7107,
+                "longitude": 81.0952
+              },
+              "geoRadius": "30000"
+            }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Engineering & Infrastructure Services Catalog",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Renewable Energies & Solar EPC",
+                  "description": "Utility-scale and commercial rooftop Solar EPC, ground-mounted photovoltaic systems, and high-power DC EV charging plazas in Vijayawada, Eluru, and AP."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "CCTV Surveillance & Optics",
+                  "description": "City-wide AI-driven CCTV surveillance, automated number plate recognition (ANPR), and command center optics installation in Vijayawada and Eluru."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Sustainability & Environmental Infrastructure",
+                  "description": "Legacy waste bio-mining, effluent treatment plants (ETP), sewage treatment plants (STP), and eco-restoration civil infrastructure in Vijayawada, Eluru, and AP."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Network Integration & Optical Fiber Backbone",
+                  "description": "Secure fiber backbones, ICCC command control rooms, and intelligent traffic management networks across Andhra Pradesh."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Government Supplies & Institutional Procurement",
+                  "description": "GeM verified institutional equipment, municipal heavy machinery, disaster rapid response equipment, and civil supplies."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Engineering Consultancy & Detailed Project Reports (DPR)",
+                  "description": "EIA statutory clearances, transaction advisory, techno-commercial feasibility, and project PMO services."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://jayaramsbharat.com/#website",
+          "url": "https://jayaramsbharat.com",
+          "name": "Jayarams Bharat",
+          "publisher": {
+            "@id": "https://jayaramsbharat.com/#corporation"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://jayaramsbharat.com/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://jayaramsbharat.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://jayaramsbharat.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Divisions",
+              "item": "https://jayaramsbharat.com/#divisions"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Projects Showcase",
+              "item": "https://jayaramsbharat.com/#projects"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Enquiries & Tenders",
+              "item": "https://jayaramsbharat.com/#enquiries"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-[#F8FAFC] text-[#1E293B] antialiased selection:bg-[#F26A21] selection:text-white">
+    <!-- Semantic Static SEO Fallback for Search Engine Crawlers (Googlebot, Bingbot) -->
+    <noscript>
+      <div style="padding: 24px; font-family: sans-serif; background: #ffffff; color: #0f172a; max-width: 900px; margin: 0 auto; line-height: 1.6;">
+        <h1>Jayarams Bharat Private Limited — Solar EPC, Infrastructure &amp; CCTV Solutions</h1>
+        <p><strong>Premier engineering &amp; infrastructure contractor serving Vijayawada, Eluru, Guntur, Amaravati, and surrounding locations within 1km to 50km radius.</strong></p>
+        
+        <h2>Our Core Engineering Divisions in Vijayawada &amp; Eluru:</h2>
+        <ul>
+          <li><strong>Renewable Energies &amp; Solar EPC:</strong> Utility-scale solar power plants, commercial rooftop solar PV installations, and EV fast-charging stations across Vijayawada, Eluru, and Andhra Pradesh.</li>
+          <li><strong>CCTV Surveillance &amp; AI Security Optics:</strong> High-definition CCTV installation, AI video analytics, and smart city command systems in Vijayawada, Eluru, and surrounding towns.</li>
+          <li><strong>Sustainability &amp; Environmental Infrastructure:</strong> Legacy municipal bio-mining, effluent treatment plants (ETP/STP), and eco-restoration in Vijayawada and Eluru industrial zones.</li>
+          <li><strong>Network Integration:</strong> Fiber optic backbone construction, ICCC command centers, and secure enterprise telecom links.</li>
+          <li><strong>Government Supplies:</strong> GeM verified procurement, municipal equipment, emergency machinery, and civil tenders.</li>
+        </ul>
+
+        <h2>Primary Service Areas (Within 1km, 5km, 25km &amp; 50km):</h2>
+        <p>Vijayawada (Benz Circle, MG Road, Governorpet, Patamata, One Town, Gollapudi, Bhavanipuram, Ibrahimpatnam, Kondapalli, Kankipadu, Penamaluru, Vuyyuru, Gannavaram), Eluru (Sanivarapupeta, Powerpet, Ashok Nagar, Tangellamudi, Pedavegi, Denduluru, Kaikaluru), Guntur, Amaravati Capital Region, Mangalagiri, Tadepalli, Hanuman Junction, Gudivada, Nuzvid, Bhimavaram, Jangareddygudem, Tanuku, and throughout Krishna, NTR, and Eluru Districts of Andhra Pradesh.</p>
+
+        <h2>Contact Information:</h2>
+        <p>Email: <a href="mailto:info@jayaramsbharat.com">info@jayaramsbharat.com</a> | Phone: +91 98765 43210</p>
+        <p>Address: Commercial Hub, Near Benz Circle, Vijayawada, Andhra Pradesh 520010 &amp; Powerpet Corridor, Eluru, Andhra Pradesh 534001.</p>
+      </div>
+    </noscript>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

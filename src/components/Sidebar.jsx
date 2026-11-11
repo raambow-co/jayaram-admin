@@ -12,7 +12,7 @@ import {
   Briefcase,
   ShieldCheck
 } from 'lucide-react';
-import { DIVISIONS, COMPANY_INFO } from '../data/mockData';
+import { DIVISIONS } from '../data/mockData';
 
 const divisionIconMap = {
   sustainability: Leaf,
@@ -40,7 +40,12 @@ const Sidebar = ({ currentView, setCurrentView, selectedCategory, setSelectedCat
       {/* Brand Header */}
       <div className="p-5 border-b border-border-gray flex items-center gap-3">
         <div className="p-1 rounded-xl bg-slate-50 border border-border-gray shadow-xs">
-          <img src="/logo.png" alt="Jayarams Bharat" className="h-9 w-auto object-contain" />
+          <img 
+            src="/logo.webp" 
+            alt="Jayarams Bharat" 
+            className="h-9 w-auto object-contain"
+            onError={(e) => { e.currentTarget.src = '/logo.png'; }}
+          />
         </div>
         <div>
           <h1 className="font-bold text-sm text-corporate-blue tracking-tight leading-none uppercase">
