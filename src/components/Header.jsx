@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Bell, ExternalLink, ShieldCheck, Check } from 'lucide-react';
+import { Search, ExternalLink, ShieldCheck } from 'lucide-react';
 
 const Header = ({ searchQuery, setSearchQuery, inquiries, onSelectInquiry }) => {
   const [currentTime, setCurrentTime] = useState('');
-  const [showNotifications, setShowNotifications] = useState(false);
 
   useEffect(() => {
     const updateTime = () => {
@@ -14,8 +13,6 @@ const Header = ({ searchQuery, setSearchQuery, inquiries, onSelectInquiry }) => 
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
-
-  const newInquiries = inquiries.filter(i => i.status === 'New');
 
   return (
     <header className="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-border-gray px-6 py-3 flex items-center justify-between gap-4 shadow-xs">
@@ -58,58 +55,6 @@ const Header = ({ searchQuery, setSearchQuery, inquiries, onSelectInquiry }) => 
           <span>Live Site</span>
           <ExternalLink className="w-3.5 h-3.5" />
         </a>
-
-        {/* Notifications Dropdown */}
-        <div className="relative">
-          <button
-            onClick={() => setShowNotifications(!showNotifications)}
-            className="relative p-2 text-text-secondary hover:text-corporate-blue hover:bg-light-bg rounded-xl border border-transparent hover:border-border-gray transition-colors"
-            title="Notifications"
-          >
-            <Bell className="w-5 h-5" />
-            {newInquiries.length > 0 && (
-              <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-brand-orange rounded-full ring-2 ring-white"></span>
-            )}
-          </button>
-
-          {showNotifications && (
-            <div className="absolute right-0 mt-2 w-80 bg-white rounded-2xl shadow-2xl border border-border-gray p-4 z-50 animate-in fade-in-50 zoom-in-95">
-              <div className="flex items-center justify-between pb-3 border-b border-border-gray mb-3">
-                <div className="font-semibold text-sm text-text-primary">
-                  New Inquiries ({newInquiries.length})
-                </div>
-                <span className="text-[11px] font-medium text-brand-orange bg-orange-50 px-2 py-0.5 rounded-full">
-                  Action Required
-                </span>
-              </div>
-              <div className="space-y-2 max-h-72 overflow-y-auto">
-                {newInquiries.length === 0 ? (
-                  <div className="py-6 text-center text-xs text-text-muted">
-                    <Check className="w-6 h-6 mx-auto mb-1 text-emerald-500" />
-                    All inquiries are currently handled!
-                  </div>
-                ) : (
-                  newInquiries.slice(0, 5).map((inq) => (
-                    <div
-                      key={inq.id}
-                      onClick={() => {
-                        onSelectInquiry(inq);
-                        setShowNotifications(false);
-                      }}
-                      className="p-2.5 rounded-xl hover:bg-light-bg cursor-pointer transition-colors border border-border-gray/50"
-                    >
-                      <div className="flex items-center justify-between text-xs font-semibold text-text-primary">
-                        <span>{inq.fullName}</span>
-                        <span className="text-[10px] font-mono text-corporate-blue">{inq.id}</span>
-                      </div>
-                      <p className="text-[11px] text-text-muted truncate mt-0.5">{inq.subject}</p>
-                    </div>
-                  ))
-                )}
-              </div>
-            </div>
-          )}
-        </div>
       </div>
     </header>
   );
