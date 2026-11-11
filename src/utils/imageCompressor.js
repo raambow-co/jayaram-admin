@@ -1,9 +1,9 @@
 /**
  * Browser-side image compressor using HTML Canvas.
  * Resizes large photos (e.g. 5MB-10MB mobile uploads) to high-quality,
- * web-optimized WebP data URLs under 200KB for lightning-fast Firestore syncing and loading.
+ * web-optimized JPEG data URLs under 250KB for fast Firestore syncing and loading.
  */
-export function compressImage(file, maxWidth = 1400, quality = 0.85) {
+export function compressImage(file, maxWidth = 1400, quality = 0.84) {
   return new Promise((resolve, reject) => {
     if (!file || !file.type.startsWith('image/')) {
       reject(new Error('Selected file is not an image'));
@@ -35,17 +35,6 @@ export function compressImage(file, maxWidth = 1400, quality = 0.85) {
         ctx.imageSmoothingEnabled = true;
         ctx.imageSmoothingQuality = 'high';
         ctx.drawImage(img, 0, 0, width, height);
-
-        // Try modern WebP first with JPEG fallback
-        try {
-          const webpDataUrl = canvas.toDataURL('image/webp', quality);
-          if (webpDataUrl.startsWith('data:image/webp')) {
-            resolve(webpDataUrl);
-            return;
-          }
-        } catch {
-          // fallback below
-        }
 
         const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
         resolve(compressedDataUrl);

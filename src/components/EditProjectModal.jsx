@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { X, Upload, Image as ImageIcon, Save, Building2, MapPin } from 'lucide-react';
+import { X, Upload, Image as ImageIcon, Save, Building2, MapPin, CheckCircle2 } from 'lucide-react';
 import { DIVISIONS } from '../data/mockData';
 import { compressImage } from '../utils/imageCompressor';
 
 const PRESET_ASSETS = [
-  { label: 'Sustainability & Environmental Infrastructure', path: '/sustainability-infra.webp' },
-  { label: 'Renewable Energies (Utility Solar)', path: '/renewable-energies.webp' },
-  { label: 'Solar Rooftop & Ground Hub', path: '/solar-jairam.webp' },
-  { label: 'Network Integration (Command Center)', path: '/network-integration.webp' },
-  { label: 'CCTV Surveillance & Optics', path: '/cctv.webp' },
-  { label: 'Government Heavy Supplies & Machinery', path: '/government-supplies.webp' },
+  { label: 'Sustainability & Environmental Infrastructure', path: '/sustainability-infra.jpg' },
+  { label: 'Renewable Energies (Utility Solar)', path: '/renewable-energies.jpg' },
+  { label: 'Solar Rooftop & Ground Hub', path: '/solar-jairam.jpeg' },
+  { label: 'Network Integration (Command Center)', path: '/network-integration.jpg' },
+  { label: 'CCTV Surveillance & Optics', path: '/cctv.jpeg' },
+  { label: 'Government Heavy Supplies & Machinery', path: '/government-supplies.jpeg' },
 ];
 
 const EditProjectModal = ({ project, onClose, onUpdateProject, showToast }) => {
   const [formData, setFormData] = useState({
     title: project.title || '',
     divisionId: project.divisionId || 'sustainability',
-    imageUrl: project.imageUrl || '/sustainability-infra.webp',
+    imageUrl: project.imageUrl || '/sustainability-infra.jpg',
     location: project.location || '',
     client: project.client || '',
     capacity: project.capacity || project.scale || '',
@@ -205,7 +205,7 @@ const EditProjectModal = ({ project, onClose, onUpdateProject, showToast }) => {
               <input
                 type="text"
                 name="imageUrl"
-                placeholder="https://... or /image-path.webp"
+                placeholder="https://... or /image-path.jpg"
                 value={formData.imageUrl}
                 onChange={handleChange}
                 required

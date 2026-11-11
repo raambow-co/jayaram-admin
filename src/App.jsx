@@ -60,13 +60,7 @@ const App = () => {
           localStorage.removeItem('jayarams_admin_projects');
           return INITIAL_PROJECTS;
         }
-        // Seamlessly migrate legacy .jpg/.jpeg paths to .webp
-        return Array.isArray(parsed) ? parsed.map(p => ({
-          ...p,
-          imageUrl: typeof p.imageUrl === 'string'
-            ? p.imageUrl.replace(/\.(jpg|jpeg)$/i, '.webp')
-            : '/sustainability-infra.webp'
-        })) : INITIAL_PROJECTS;
+        return parsed;
       }
       return INITIAL_PROJECTS;
     } catch {
@@ -113,25 +107,6 @@ const App = () => {
 
   // Navigation states
   const [currentView, setCurrentView] = useState('dashboard'); // 'dashboard' | 'enquiries' | 'projects' | 'analytics' | 'settings'
-
-  // Google Analytics 4 page view tracking for SPA transitions
-  useEffect(() => {
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      const viewTitleMap = {
-        dashboard: 'Dashboard Overview',
-        enquiries: 'Division Enquiries & Tenders',
-        projects: 'Project Showcase Assets',
-        analytics: 'Analytics & Pipeline Performance',
-        settings: 'Settings & Data Governance'
-      };
-      const title = viewTitleMap[currentView] || 'Executive Command';
-      window.gtag('event', 'page_view', {
-        page_title: `Jayarams Bharat — ${title}`,
-        page_location: window.location.href,
-        page_path: `/${currentView}`
-      });
-    }
-  }, [currentView]);
   const [selectedCategory, setSelectedCategory] = useState('all'); // 'all' | 'sustainability' | etc.
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -250,7 +225,6 @@ const App = () => {
       await seedInitialProjectsInDb(INITIAL_PROJECTS);
       showToast('Initial authentic projects successfully synced to Firestore!', 'success');
     } catch (err) {
-      console.error('Failed to seed projects to Firestore:', err);
       showToast('Failed to seed projects to Firestore', 'error');
     }
   };

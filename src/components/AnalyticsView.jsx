@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart3, TrendingUp, Leaf, SunMedium, Landmark, Network, Briefcase, Info, CheckCircle2 } from 'lucide-react';
-import { DIVISIONS } from '../data/mockData';
+import { DIVISIONS, COMPANY_INFO } from '../data/mockData';
 
 const iconMap = {
   sustainability: Leaf,
